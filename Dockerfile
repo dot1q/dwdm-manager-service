@@ -1,9 +1,6 @@
 FROM node:13.8.0-alpine
 
 RUN addgroup -S nupp && adduser -S -g nupp nupp
-RUN apk update && apk add --virtual build-dependencies build-base gcc wget git unzip
-RUN wget -O /tmp/master.zip https://github.com/troydhanson/uthash/archive/master.zip
-RUN unzip /tmp/master.zip -d /tmp
 RUN rm -rf /tmp/*
 
 ENV HOME=/home/nupp
